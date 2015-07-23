@@ -60,6 +60,7 @@ feature 'restaurants' do
 
       scenario 'users can only edit/delete restaurants they\'ve created' do
         sign_up
+        visit '/restaurants'
         click_link 'Add a restaurant'
         fill_in 'Name', with: 'KFC'
         click_button 'Create Restaurant'
@@ -110,7 +111,7 @@ feature 'restaurants' do
     def sign_up_another_user
       visit '/restaurants'
       click_link 'Sign up'
-      fill_in 'Email', with: 'test@gmail.com'
+      fill_in 'Email', with: 'test1@gmail.com'
       fill_in 'Password', with: '123password'
       fill_in 'Password confirmation', with: '123password'
       click_button 'Sign up'
